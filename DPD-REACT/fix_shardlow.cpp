@@ -13,7 +13,10 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Contributing authors:
+   Contributing authors: Nunzia Lauriello (Politecnico di Torino), James Larentzos (U.S. Army Research Laboratory), Martin Lísal (ICPF, UJEP)
+   
+   Extension of fix shardlow by:
+   
    James Larentzos (U.S. Army Research Laboratory)
    and Timothy I. Mattox (Engility Corporation)
 
