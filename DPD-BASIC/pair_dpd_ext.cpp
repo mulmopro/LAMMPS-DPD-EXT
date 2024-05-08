@@ -13,8 +13,8 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-  Contributing authors: Nunzia Lauriello (Politecnico di Torino), James Larentzos (U.S. Army Research Laboratory),Martin Lísal (ICPF, UJEP)
-  based on pair style dpd/ext by: Martin Svoboda (ICPF, UJEP), Martin Lísal (ICPF, UJEP)
+  Contributing authors: Nunzia Lauriello (Politecnico di Torino), James Larentzos (U.S. Army Research Laboratory), Martin Lísal (ICPF, UJEP)
+  Extension of pair style dpd/ext by: Martin Svoboda (ICPF, UJEP), Martin Lísal (ICPF, UJEP)
 ------------------------------------------------------------------------- */
 
 #include "pair_dpd_ext.h"
