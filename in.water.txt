@@ -1,0 +1,83 @@
+# LAMMPS input script Shardlow's ODEs integration
+
+
+units       lj
+variable    ndim      equal 3
+
+
+# Box size
+
+variable    xsize     equal 15
+variable    ysize     equal 15
+variable    zsize     equal 15
+
+
+# DPD parameters
+
+variable    rho       equal 3
+variable    kb        equal 1
+variable    T         equal 1/${kb}
+variable    rc        equal 1
+variable    a         equal 25.191
+variable    dt        equal 0.01
+variable    sigma     equal 3
+variable    s	       equal 1
+variable    rcD       equal 1
+variable    nBeads    equal (${xsize}*${ysize}*${zsize})*${rho}
+
+# Simulation parameters
+timestep     ${dt}
+dimension    ${ndim} 
+variable    neql      equal 200000
+variable    Nprint     equal 1000  
+
+# Create simulation box
+
+
+boundary     p p p 
+atom_style   atomic
+comm_modify  vel yes
+newton       on
+lattice      none 1
+region       box block 0 ${xsize} 0 ${ysize} 0 ${zsize} 
+create_box   1 box
+create_atoms 1 random ${nBeads}  126775  box
+
+# Define masses and interaction coefficient
+
+pair_style   dpdext/fdt ${T} 1 123455 
+mass         1 1.0
+pair_coeff   1 1 ${a} ${sigma} ${sigma} ${s} ${s} ${rc} ${rcD}
+neighbor	     0.3 bin
+neigh_modify	 delay 0 every 1 check yes
+velocity all create ${T} 4928 mom yes dist gaussian
+pair_modify nofdotr
+
+variable pxy equal pxy
+variable pxz equal pxz
+variable pyz equal pyz
+
+
+fix 1 all shardlow
+fix 2 all nve
+
+compute myTemp all temp
+compute mypress all pressure myTemp 
+
+thermo 1
+thermo_style custom step temp press c_mypress[1*6] v_pxy v_pxz v_pyz
+thermo ${Nprint}
+run ${neql}
+
+write_restart  dpd_fluid.restart0
+
+#DONE 
+
+
+
+
+
+
+
+
+
