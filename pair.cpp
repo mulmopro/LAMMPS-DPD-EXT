@@ -12,7 +12,8 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Contributing author: Paul Crozier (SNL)
+   Contributing authors: Nunzia Lauriello (Politecnico di Torino), James Larentzos (U.S. Army Research Laboratory), Martin Lísal (ICPF, UJEP)
+   Extension of pair.cpp by Paul Crozier (SNL)
 ------------------------------------------------------------------------- */
 
 #include "pair.h"
