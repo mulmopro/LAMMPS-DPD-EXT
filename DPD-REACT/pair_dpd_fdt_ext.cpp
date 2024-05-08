@@ -13,7 +13,8 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Contributing author: James Larentzos (U.S. Army Research Laboratory)
+   Contributing author: Nunzia Lauriello (Politecnico di Torino)
+   Contributing author: James Larentzos (U.S. Army Research Laboratory)   
 ------------------------------------------------------------------------- */
 
 #include "pair_dpd_fdt_ext.h"
